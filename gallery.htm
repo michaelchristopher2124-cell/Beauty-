@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Gallery | Luxury Nail NG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar"><div class="nav-container"><a href="index.html" class="logo">Luxury <span>Nail NG</span></a><div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="gallery.html" class="active">Gallery</a><a href="cart.html">Cart <span id="nav-cart-count" class="cart-badge">0</span></a><a href="contact.html">Contact</a><a href="contact.html" class="btn-book">Book Now</a></div><div class="mobile-menu-btn"><i class="fas fa-bars"></i></div></div></nav>
+
+    <section class="page-header"><div class="container"><h1>Our Work</h1><p>See some of our beautiful nail creations</p></div></section>
+
+    <section class="gallery-section"><div class="container"><div class="gallery-grid" id="gallery-grid"><div class="gallery-item"><img src="https://placehold.co/400x400/ffe0f0/e84393?text=Upload+Nail+Photo+1" alt="Nail art 1"><div class="gallery-overlay"><span>✨ Beautiful Nails</span></div></div><div class="gallery-item"><img src="https://placehold.co/400x400/ffe0f0/e84393?text=Upload+Nail+Photo+2" alt="Nail art 2"><div class="gallery-overlay"><span>💅 Perfect Manicure</span></div></div><div class="gallery-item"><img src="https://placehold.co/400x400/ffe0f0/e84393?text=Upload+Nail+Photo+3" alt="Nail art 3"><div class="gallery-overlay"><span>✨ Acrylic Nails</span></div></div><div class="gallery-item"><img src="https://placehold.co/400x400/ffe0f0/e84393?text=Upload+Nail+Photo+4" alt="Nail art 4"><div class="gallery-overlay"><span>💎 Gel Polish</span></div></div><div class="gallery-item"><img src="https://placehold.co/400x400/ffe0f0/e84393?text=Upload+Nail+Photo+5" alt="Nail art 5"><div class="gallery-overlay"><span>🌸 Nail Art</span></div></div><div class="gallery-item"><img src="https://placehold.co/400x400/ffe0f0/e84393?text=Upload+Nail+Photo+6" alt="Nail art 6"><div class="gallery-overlay"><span>💖 Luxury Finish</span></div></div><div class="gallery-item"><img src="https://placehold.co/400x400/ffe0f0/e84393?text=Upload+Nail+Photo+7" alt="Nail art 7"><div class="gallery-overlay"><span>✨ Custom Design</span></div></div><div class="gallery-item"><img src="https://placehold.co/400x400/ffe0f0/e84393?text=Upload+Nail+Photo+8" alt="Nail art 8"><div class="gallery-overlay"><span>💅 Perfect Shape</span></div></div></div><p class="gallery-note"><i class="fas fa-camera"></i> Replace the placeholder images with your actual nail photos. Just update the image URLs above.</p></div></section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Luxury Nail NG</h4><p>Premium nail care & beauty services in Lekki, Lagos.</p></div><div class="footer-col"><h4>Quick Links</h4><p><a href="index.html">Home</a></p><p><a href="services.html">Services</a></p><p><a href="products.html">Products</a></p><p><a href="gallery.html">Gallery</a></p><p><a href="contact.html">Contact</a></p></div><div class="footer-col"><h4>Hours</h4><p>Mon-Sat: 9am-6pm</p><p>Sunday: Open 24hrs</p></div><div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 0802 424 2656</p><p><i class="fab fa-whatsapp"></i> 0802 424 2656</p></div></div><div class="footer-bottom"><p>© 2024 Luxury Nail NG — All Rights Reserved. Website by Michael WebDev</p></div></div></footer>
+
+    <script src="cart-manager.js"></script>
+    <script>
+        document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() { const links = document.querySelector('.nav-links'); if (links.style.display === 'flex') links.style.display = 'none'; else { links.style.display = 'flex'; links.style.flexDirection = 'column'; links.style.position = 'absolute'; links.style.top = '70px'; links.style.left = '0'; links.style.right = '0'; links.style.backgroundColor = '#fff'; links.style.padding = '24px'; links.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)'; } });
+        function updateNavCartCount() { const cart = JSON.parse(localStorage.getItem('luxurynail_cart') || '[]'); const count = cart.reduce((sum, item) => sum + item.quantity, 0); const badge = document.getElementById('nav-cart-count'); if (badge) { badge.textContent = count; badge.style.display = count > 0 ? 'inline-block' : 'none'; } }
+        updateNavCartCount();
+    </script>
+</body>
+</html>
