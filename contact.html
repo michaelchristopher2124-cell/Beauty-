@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Contact | Luxury Nail NG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar"><div class="nav-container"><a href="index.html" class="logo">Luxury <span>Nail NG</span></a><div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="gallery.html">Gallery</a><a href="cart.html">Cart <span id="nav-cart-count" class="cart-badge">0</span></a><a href="contact.html" class="active">Contact</a><a href="contact.html" class="btn-book">Book Now</a></div><div class="mobile-menu-btn"><i class="fas fa-bars"></i></div></div></nav>
+
+    <section class="page-header"><div class="container"><h1>Contact Us</h1><p>We're here to pamper you</p></div></section>
+
+    <section class="contact-section"><div class="container"><div class="contact-grid"><div class="contact-info-card"><h3>Get in Touch</h3><div class="contact-detail"><i class="fas fa-phone-alt"></i><div><strong>Phone / WhatsApp</strong><p>0802 424 2656</p></div></div><div class="contact-detail"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong><p>35b Fola Oshibo, Lekki, Lagos, Nigeria</p></div></div><div class="contact-detail"><i class="fas fa-clock"></i><div><strong>Opening Hours</strong><p>Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: Open 24 Hours</p></div></div></div><div class="contact-form-card"><h3>Send us a Message</h3><form id="contact-form"><div class="form-group"><input type="text" placeholder="Your Name" required></div><div class="form-group"><input type="email" placeholder="Email Address" required></div><div class="form-group"><input type="tel" placeholder="Phone Number" required></div><div class="form-group"><textarea rows="4" placeholder="Your Message..."></textarea></div><button type="submit" class="btn-submit">Send Message →</button></form></div></div><div class="map-container"><iframe width="100%" height="300" frameborder="0" style="border:0; border-radius:20px" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Lekki+Lagos+Nigeria" allowfullscreen></iframe></div><div class="call-buttons"><h3>Quick Booking</h3><div class="call-buttons-grid"><a href="tel:08024242656" class="call-btn"><i class="fas fa-phone"></i> Call Now</a><a href="https://wa.me/2348024242656" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></div></div></div></section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Luxury Nail NG</h4><p>Premium nail care & beauty services in Lekki, Lagos.</p></div><div class="footer-col"><h4>Quick Links</h4><p><a href="index.html">Home</a></p><p><a href="services.html">Services</a></p><p><a href="products.html">Products</a></p><p><a href="gallery.html">Gallery</a></p><p><a href="contact.html">Contact</a></p></div><div class="footer-col"><h4>Hours</h4><p>Mon-Sat: 9am-6pm</p><p>Sunday: Open 24hrs</p></div><div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 0802 424 2656</p><p><i class="fab fa-whatsapp"></i> 0802 424 2656</p></div></div><div class="footer-bottom"><p>© 2024 Luxury Nail NG — All Rights Reserved. Website by Michael WebDev</p></div></div></footer>
+
+    <script src="cart-manager.js"></script>
+    <script>
+        document.getElementById('contact-form')?.addEventListener('submit', function(e) { e.preventDefault(); const name = this.querySelector('input[placeholder="Your Name"]')?.value || ''; const phone = this.querySelector('input[placeholder="Phone Number"]')?.value || ''; const message = this.querySelector('textarea')?.value || ''; window.open(`https://wa.me/2348024242656?text=*Luxury Nail NG Inquiry*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A%0A*Message:* ${message}`, '_blank'); });
+        document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() { const l = document.querySelector('.nav-links'); if (l.style.display === 'flex') l.style.display = 'none'; else { l.style.display = 'flex'; l.style.flexDirection = 'column'; l.style.position = 'absolute'; l.style.top = '70px'; l.style.left = '0'; l.style.right = '0'; l.style.backgroundColor = '#fff'; l.style.padding = '24px'; l.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)'; } });
+        function updateNavCartCount() { const cart = JSON.parse(localStorage.getItem('luxurynail_cart') || '[]'); const count = cart.reduce((s,i) => s + i.quantity, 0); const badge = document.getElementById('nav-cart-count'); if (badge) { badge.textContent = count; badge.style.display = count > 0 ? 'inline-block' : 'none'; } }
+        updateNavCartCount();
+    </script>
+</body>
+</html>
